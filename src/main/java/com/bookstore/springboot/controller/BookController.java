@@ -46,7 +46,7 @@ public class BookController {
 	}
 	
 	
-	@DeleteMapping(path = { "/{id}" })
+	@DeleteMapping(path = { "/delete/{id}" })
 	public Book deleteBook(@PathVariable("id") long id) {
 		Book book = bookRepository.getById(id);
 		bookRepository.deleteById(id);
