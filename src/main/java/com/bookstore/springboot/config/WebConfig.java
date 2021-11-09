@@ -13,9 +13,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry corsRegistry) {
         corsRegistry.addMapping("/**")
                 .allowedOrigins("https://bookstore-angular-app.herokuapp.com")
-                .allowedMethods("*")
+              //  .allowedMethods("*")
                 .maxAge(3600L)
-                .allowedHeaders("*")
+                .allowedHeaders("Access-Control-Request-Method","Access-Control-Request-Headers","token","Content-Type","X-Requested-With","accept,Origin")
+              //  .allowedHeaders("*")
                 .exposedHeaders("Authorization")
                 .allowCredentials(true);
     }
