@@ -17,7 +17,8 @@ import com.bookstore.springboot.model.repository.UserRepository;
 
 
 @RestController
-@CrossOrigin(origins = "https://bookstore-angular-app.herokuapp.com/")
+//@CrossOrigin(origins = "https://bookstore-angular-app.herokuapp.com/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/users")
 public class UserController {
 	
@@ -26,16 +27,19 @@ public class UserController {
 	private UserRepository userRepository;
 
 	@GetMapping("/get")
+	@CrossOrigin(origins = "*")
 	public List<User> getUsers(){
 		return userRepository.findAll();	
 	}
 	
 	@PostMapping("/add")
+	@CrossOrigin(origins = "*")
 	public void createUser(@RequestBody User user) {
 		userRepository.save(user);
 	}
 	
 	@DeleteMapping(path = { "/delete/{id}" })
+	@CrossOrigin(origins = "*")
 	public User deleteUser(@PathVariable("id") long id) {
 		User user = userRepository.getById(id);
 		userRepository.deleteById(id);
