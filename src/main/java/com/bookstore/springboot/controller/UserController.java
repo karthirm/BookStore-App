@@ -18,7 +18,7 @@ import com.bookstore.springboot.model.repository.UserRepository;
 
 @RestController
 @CrossOrigin(origins = "https://bookstore-angular-app.herokuapp.com/")
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 	
 	
