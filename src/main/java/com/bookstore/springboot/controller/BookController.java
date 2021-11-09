@@ -20,7 +20,7 @@ import com.bookstore.springboot.model.Book;
 import com.bookstore.springboot.model.repository.BookRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://bookstore-angular-app.herokuapp.com/")
 @RequestMapping("/books")
 public class BookController {
 
